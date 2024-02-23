@@ -1,0 +1,77 @@
+/* CSS styles */
+
+/* Define the custom font */
+@font-face {
+    font-family: 'CustomFont';
+    src: url('ponyfont1.ttf') format('truetype');
+}
+
+/* Body styles */
+body {
+    background-image: url('background3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'CustomFont', Arial, sans-serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Logo animation */
+.logo {
+    width: 250px;
+    height: 250px;
+    animation: logoAnimation 3s ease-in-out infinite alternate;
+    margin-top: 50px;
+}
+
+/* Define the logo animation */
+@keyframes logoAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Tab styles */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tab {
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.tab:hover {
+    transform: translateY(-5px);
+}
+
+/* Welcome text styles */
+.welcome-text {
+    color: #f5e9f1;
+}
+
+/* Footer styles */
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
