@@ -1,97 +1,169 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etercraft</title>
-    <link rel="icon" href="img/logo.png" type="image/icon type">
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="style/cssfile.css">
+    <title>Heroes of Equestria</title>
+    <link rel="icon" type="image/png" href="logo2.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('ponyfont1.ttf') format('truetype');
+        }
+
+        body {
+            background-image: url('background3.png');
+            animation: animatedBackground 10s infinite linear;
+            margin: 0;
+            padding: 0;
+            font-family: 'CustomFont', Arial, sans-serif;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        @keyframes animatedBackground {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        .logo {
+            width: 250px;
+            height: 250px;
+            animation: logoAnimation 3s ease-in-out infinite alternate;
+            margin-top: 50px;
+        }
+
+        @keyframes logoAnimation {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tab {
+            margin: 0 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .tab:hover {
+            transform: translateY(-5px);
+            filter: brightness(1.2); /* Brightens the image on hover */
+        }
+
+        .welcome-text {
+            color: #f5e9f1;
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Additional styles for the new tab */
+        .corner-tab {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999; /* Ensures it's above other content */
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out; /* Added transition */
+        }
+
+        .corner-tab:hover {
+            transform: translateY(-5px); /* Added hover effect */
+            filter: brightness(1.2); /* Brightens the image on hover */
+        }
+    </style>
 </head>
 <body>
-    <!-- NAVBAR -->
-    <nav class="sticky">
-        <a href="index2.html">
-            <img class="logo" src="img/logo.png" alt="">
-        </a>
-        <ul>
-            <li>
-                <a href="pobierz.html"><button>POBIERZ</button></a>
-            </li>
-            <li>
-                <a href="poradniki.html"><button>PORADNIKI</button></a>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <a href="https://www.youtube.com/@NatanZgorzyk" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            </li>
-            <li>
-                <a href="https://discord.gg/nkRWBYwgaK" target="_blank"><i class="fa-brands fa-discord"></i></a>
-            </li>
-        </ul>
-    </nav>
-    <!-- CONTENT -->  
-      <div class="slider">
-        <!-- fade css -->
-        <div class="myslide fade">
-          <div class="txt">
-            <h1> WEZ UDZIAL W <br> EPICKIEJ WALCE Z BOSSAMI</h1>
-            <p>Ogromne areny, klimatyczna muzyka, wspaniale animacje i epicka walka. <br> Nie to co zabicie final bossa lozkami.</p>
-          </div>
-          <img src="img/eterboss.png" style="width: 100%; height: 100%;">
+    <img src="logo2.png" alt="Logo" class="logo">
+    <p class="welcome-text">Welcome to Heroes of Equestria</p>
+    
+    <div class="tabs">
+        <div class="tab" onclick="onTabClick('sound1.mp3')">
+            <a href="Strona.html">
+                <img src="plankhome.png" alt="Home" width="250" height="150">
+            </a>
         </div>
-        
-        <div class="myslide fade">
-          <div class="txt">
-            <h1>WYCZYSC DROGE PELNA MINIBOSSOW</h1>
-            <p>Zgladz te ogromne kreatury i zdobadz z nich przerozne skladniki na potezne sety. <br> Od nowych rodzajow broni po magiczne artefakty i zaklecia.</p>
-          </div>
-          <img src="img/miniboss.png" style="width: 100%; height: 100%;">
+        <div class="tab" onclick="playSound('sound2.mp3')">
+            <a href="https://discord.com/invite/nazwa_twojego_serwera">
+                <img src="plankdiscord.png" alt="Zakładka 1" width="250" height="150">
+            </a>
         </div>
-        
-        <div class="myslide fade">
-          <div class="txt">
-            <h1>NIEKONCZACE SIE STRUKTURY</h1>
-            <p> Oczywiscie w rzeczywistosci maja koniec, ale nie zmienia to faktu, <br> ze maja nalezyty loot w stosunku do wielkosci a
-              nie jakies pierdolone patyki i piora.</p>
-          </div>
-          <img src="img/struktury.png" style="width: 100%; height: 100%;">
+        <div class="tab" onclick="playSound('sound3.mp3')">
+            <a href="Map.html">
+                <img src="plankmap.png" alt="Zakładka 2" width="250" height="150">
+            </a>
         </div>
-        
-        <div class="myslide fade">
-          <div class="txt">
-            <h1>PODBIJ INNYCH GRACZY</h1>
-            <p> Stworz wlasna gildie i poprowadz ja ku szczytowi. <br> Niech Twoi znajomi okryja sie w chwale zwyciestwa, <br> a przeciwnicy w lzach i spamie, ze masz cheaty i pojda do admina.</p>
-          </div>
-          <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/47dc4a19-a737-4ea1-92e3-36aba84929d3/d80lcci-77ce86f9-3dfe-4949-b475-28c6bc89a1cf.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ3ZGM0YTE5LWE3MzctNGVhMS05MmUzLTM2YWJhODQ5MjlkM1wvZDgwbGNjaS03N2NlODZmOS0zZGZlLTQ5NDktYjQ3NS0yOGM2YmM4OWExY2YuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.9W55sfMDKtNIqfnwDFmupzWqG9pOYva1jo9I3mVR5Rc" style="width: 100%; height: 100%;">
+        <div class="tab" onclick="playSound('sound4.mp3')">
+            <a href="Rules.html"> 
+                <img src="plankrules.png" alt="Zakładka 3" width="250" height="150">
+            </a>
         </div>
-        
-        <div class="myslide fade">
-          <div class="txt">
-            <h1>PRAWDZIWY SURVIVAL I WIELE WIECEJ!</h1>
-            <p> Zdobywasz zelazny set i juz radzisz sobie z kazdym przeciwnikiem? <br> Tutaj przezycie wymaga dobrego skilla, a dzieki kontentowi z modow <br> zawsze masz co robic. Niesamowite struktury mozesz znalezc doslownie wszedzie. <br> Ulepszony system HP, dopracowane biomy, maszyny z Create Mod <br> Kazdy znajdzie to co lubi. 
-              <a href="https://github.com/Eterprove/Minecraft-Mod/archive/refs/heads/main.zip">Pobierz i przekonaj sie sam!</a></p>
-          </div>
-          <img src="img/sety.png" style="width: 100%; height: 100%;">
+        <div class="tab" onclick="playSound('sound5.mp3')">
+            <a href="regulations.html"> 
+                <img src="plankregulations.png" alt="Zakładka 4" width="250" height="150">
+            </a>
         </div>
-        
-        <div class="dotsbox" style="text-align:center">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-          <span class="dot" onclick="currentSlide(4)"></span>
-          <span class="dot" onclick="currentSlide(5)"></span>
-        </div>
-      </div>
-
-    <footer class="sticky2">
-        IP: etercraft.mine.game
-        Wersja: 1.16.5 (forge 36.2.39)
+    </div>
+    <footer>
+        <p>© All rights reserved 2023/2024.</p>
+        <p>This site and its contents are not affiliated with Hasbro, Inc. My Little Pony and all of its characters are trademarks of Hasbro, Inc.
+            Not an official Minecraft product/service/event/etc. Not approved by or associated with Mojang or Microsoft.</p>
     </footer>
-    <script src="skrypty/search.js"></script>
-    <script src="skrypty/creatediv.js"></script>
-    <script src="skrypty/jsfile.js"></script>
+
+    <!-- Corner tab -->
+    <div class="corner-tab" onclick="copyIP()">
+        <img src="plankcopy.png" alt="Tab" width="250" height="150">
+    </div>
+
+    <script>
+        function playSound(soundFile) {
+            var audio = new Audio(soundFile);
+            if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {
+                audio.play();
+            } else {
+                console.log("Your browser doesn't support playing sounds.");
+                // You can display a message to the user instead of logging to the console
+            }
+        }
+        
+
+        function copyIP() {
+            var ip = "heroesofequestria.com";
+            navigator.clipboard.writeText(ip)
+                .then(function() {
+                    alert('IP Address copied to clipboard: ' + ip);
+                })
+                .catch(function(error) {
+                    console.error('Unable to copy IP Address: ', error);
+                });
+        }
+    </script>
 </body>
 </html>
