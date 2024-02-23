@@ -15,10 +15,14 @@
         body {
             background-image: url('background3.png');
             animation: animatedBackground 10s infinite linear;
-            font-family: 'CustomFont', Arial, sans-serif;
-            color: #ffffff;
             margin: 0;
             padding: 0;
+            font-family: 'CustomFont', Arial, sans-serif;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
 
         @keyframes animatedBackground {
@@ -31,9 +35,8 @@
         }
 
         .logo {
-            width: 100%;
-            max-width: 250px;
-            height: auto;
+            width: 250px;
+            height: 250px;
             animation: logoAnimation 3s ease-in-out infinite alternate;
             margin-top: 50px;
         }
@@ -47,15 +50,8 @@
             }
         }
 
-        .welcome-text {
-            color: #f5e9f1;
-            text-align: center;
-            margin-top: 20px;
-        }
-
         .tabs {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             margin-top: 20px;
         }
@@ -68,34 +64,39 @@
 
         .tab:hover {
             transform: translateY(-5px);
-            filter: brightness(1.2);
+            filter: brightness(1.2); /* Brightens the image on hover */
         }
 
-        .tab img {
-            max-width: 100%;
-            height: auto;
+        .welcome-text {
+            color: #f5e9f1;
         }
 
         footer {
+            margin-top: auto;
             text-align: center;
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.5);
-            color: #ffffff;
-            margin-top: 20px;
+            width: 100%;
         }
 
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Additional styles for the new tab */
         .corner-tab {
             position: fixed;
-            bottom: 20px;
+            top: 20px;
             right: 20px;
-            z-index: 9999;
+            z-index: 9999; /* Ensures it's above other content */
             cursor: pointer;
-            transition: transform 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out; /* Added transition */
         }
 
-        .corner-tab img {
-            max-width: 100%;
-            height: auto;
+        .corner-tab:hover {
+            transform: translateY(-5px); /* Added hover effect */
+            filter: brightness(1.2); /* Brightens the image on hover */
         }
     </style>
 </head>
@@ -105,28 +106,28 @@
     
     <div class="tabs">
         <div class="tab" onclick="onTabClick('sound1.mp3')">
-            <a href="Strona.html">
-                <img src="plankhome.png" alt="Home">
+            <a href="index.html">
+                <img src="plankhome.png" alt="Home" width="250" height="150">
             </a>
         </div>
         <div class="tab" onclick="playSound('sound2.mp3')">
             <a href="https://discord.com/invite/nazwa_twojego_serwera">
-                <img src="plankdiscord.png" alt="Zakładka 1">
+                <img src="plankdiscord.png" alt="Zakładka 1" width="250" height="150">
             </a>
         </div>
         <div class="tab" onclick="playSound('sound3.mp3')">
             <a href="Map.html">
-                <img src="plankmap.png" alt="Zakładka 2">
+                <img src="plankmap.png" alt="Zakładka 2" width="250" height="150">
             </a>
         </div>
         <div class="tab" onclick="playSound('sound4.mp3')">
             <a href="Rules.html"> 
-                <img src="plankrules.png" alt="Zakładka 3">
+                <img src="plankrules.png" alt="Zakładka 3" width="250" height="150">
             </a>
         </div>
         <div class="tab" onclick="playSound('sound5.mp3')">
             <a href="regulations.html"> 
-                <img src="plankregulations.png" alt="Zakładka 4">
+                <img src="plankregulations.png" alt="Zakładka 4" width="250" height="150">
             </a>
         </div>
     </div>
@@ -136,8 +137,9 @@
             Not an official Minecraft product/service/event/etc. Not approved by or associated with Mojang or Microsoft.</p>
     </footer>
 
+    <!-- Corner tab -->
     <div class="corner-tab" onclick="copyIP()">
-        <img src="plankcopy.png" alt="Tab">
+        <img src="plankcopy.png" alt="Tab" width="250" height="150">
     </div>
 
     <script>
@@ -147,8 +149,10 @@
                 audio.play();
             } else {
                 console.log("Your browser doesn't support playing sounds.");
+                // You can display a message to the user instead of logging to the console
             }
         }
+        
 
         function copyIP() {
             var ip = "heroesofequestria.com";
