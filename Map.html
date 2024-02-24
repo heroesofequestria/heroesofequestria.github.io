@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Page</title>
+    <link rel="stylesheet" href="style.css"> <!-- If you have a separate stylesheet -->
+    <style>
+        /* Additional styles specific to this page */
+        .back-to-home {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            transition: transform 0.3s ease-in-out; /* Added transition for smooth animation */
+        }
+        .back-to-home img {
+            width: 250px;
+            height: 150px;
+        }
+        .back-to-home:hover {
+            transform: translateY(-5px); /* Move the image slightly upwards on hover */
+        }
+        /* Style for the map container */
+        #minecraft-map {
+            width: calc((100vw / 6) * 2); /* Set width to twice the one-sixth of the viewport width */
+            height: calc(((100vw / 6) * 2) * (2/3)); /* Set height to maintain 2:3 aspect ratio */
+            max-height: 600px; /* Set maximum height to ensure it doesn't get too tall */
+            border: 1px solid #ccc; /* Add border for better visualization */
+        }
+    </style>
+</head>
+<body>
+    <h1>Maps Equestria G5</h1>
+    <!-- Embed the Minecraft map viewer using the IP address -->
+    <iframe id="minecraft-map" src="http://77.253.223.125:8100"></iframe>
+
+    <a class="back-to-home" href="index.html">
+        <img src="plankback.png" alt="Back to Home">
+    </a> <!-- Link back to the home page -->
+
+    <script src="script.js"></script> <!-- If you have a separate JavaScript file -->
+</body>
+</html>
